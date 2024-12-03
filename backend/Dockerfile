@@ -12,6 +12,9 @@ COPY settings.gradle .
 COPY src src
 
 # Build the app
+# Cấp quyền thực thi cho tệp gradlew
+RUN chmod +x gradlew
+
 RUN ./gradlew bootJar
 RUN mv build/libs/*.jar app.jar
 
